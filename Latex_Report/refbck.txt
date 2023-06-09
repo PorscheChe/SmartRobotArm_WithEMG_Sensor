@@ -1,0 +1,28 @@
+\section{References}
+    \begin{flushleft}
+    \footnotesize
+    [1] ROBU.IN \href{https://robu.in/lithium-ion-battery-vs-li-po-battery/}{"Lithium-ion Battery vs Lithium-polymer Battery"}
+    \href{https://robu.in/lithium-ion-battery-vs-li-po-battery/}{$https://robu.in/lithium-ion-battery-vs-li-po-battery/$}
+    (accessed Sep, 09 2022)
+    \\~\\
+    2. Wayne Williams \href{https://bionicsforeveryone.com/bionic-arms-hands/}{"A Complete Guide to Bionic Arms \& Hands"} 
+    \href{https://bionicsforeveryone.com/bionic-arms-hands/}{$https://bionicsforeveryone.com/bionic-arms-hands/$}
+    (accessed Sep, 09 2022)
+    \\~\\
+    3. Raspberry Pi \href{https://www.raspberrypi.com/products/raspberry-pi-pico/}{"Raspberry Pi Pico"}
+    \href{https://www.raspberrypi.com/products/raspberry-pi-pico/}{$https://www.raspberrypi.com/products/raspberry-pi-pico/$}
+    (accessed Sep, 09 2022)
+    \\~\\
+    4. TensorFlow \href{https://www.tensorflow.org/}{"Tensorflow"}
+    \href{https://www.tensorflow.org/}{$https://www.tensorflow.org/$}
+    (accessed Sep, 09 2022)
+    \\~\\
+    5. Arduino \href{https://www.arduino.cc/en/software}{Arduino IDE}
+    \href{https://www.arduino.cc/en/software}{$https://www.arduino.cc/en/software$}
+    (accessed Sep, 09 2022)
+    \\~\\
+    6. Kilograham \href{https://github.com/raspberrypi/pico-sdk}{Pico-SDK}
+    \href{https://github.com/raspberrypi/pico-sdk}{$https://github.com/raspberrypi/pico-sdk$}
+    (accessed Sep, 09 2022)
+    \\~\\
+    \end{flushleft}

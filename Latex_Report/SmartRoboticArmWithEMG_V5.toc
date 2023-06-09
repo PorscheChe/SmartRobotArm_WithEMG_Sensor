@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Project Objectives}{1}{subsection.1.1}%
+\contentsline {section}{\numberline {2}Project Overview}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Overall System Diagram}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Hardware}{2}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Microcontroller}{2}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}EMG Sensors}{3}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Flex Sensors}{3}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Servo Motors}{4}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Power Supply}{4}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Robot Arm}{5}{subsubsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.3}Software}{5}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Arduino IDE}{5}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Visual Studio Code}{5}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Pico SDK}{6}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Tensorflow Lite (TinyML)}{6}{subsubsection.2.3.4}%
+\contentsline {section}{\numberline {3}Activities and Progress}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Issues and Challenges}{6}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}TensorFlow Compatibility Issues}{6}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Costs of 3D Printing}{6}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Activity and Progress}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Flowchart}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Sensor Values}{8}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Smoothing the Signals}{9}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}AI Training}{9}{subsubsection.3.2.4}%
+\contentsline {paragraph}{Data Preperation}{9}{paragraph*.1}%
+\contentsline {section}{\numberline {4}Conclusion}{10}{section.4}%

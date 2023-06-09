@@ -1,0 +1,319 @@
+\documentclass[12pt]{article}
+\usepackage{times}
+\usepackage{titlesec}
+\usepackage[left=3cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{placeins}
+\renewcommand{\figurename}{Fig.}
+\begin{document}
+\graphicspath{ {D:/LaTex Saves/Images} }
+    \pagenumbering{gobble}
+    \begin{center}
+        \large \textbf{Smart Robotic Arm with EMG Sensors} 
+        \\~\\~\\
+        \normalsize
+        by
+        \\~\\~\\
+        Pathompong Cheewasrirungruang
+        \\~\\
+        Thanadol Nusuwan
+        \\~\\~\\~\\
+        A report submitted in partial fulfillment of the requirements for
+        \\
+        the degree of Bachelor of Engineering in
+        \\
+        Mechatronics Engineering and Computer Engineering
+        \\~\\~\\~\\~\\
+        Project Advisor
+        \\~\\
+        Dr. Amulya Bhattarai
+        \break\break\break
+        Examination Committee
+        \\~\\
+        Dr. Jerapong Rojanarowan, Dr. Wisuwat Plodpradista,
+        \\
+        Assoc. Prof. Dr. Jiradech Kongthon, Assoc. Prof. Dr. Vorapoj Patanavijit,
+        \\
+        Dr. Amulya Bhattarai, Dr. Ehsan Ali
+        \\~\\~\\~\\~\\
+        Assumption University
+        \\
+        Vincent Mary School of Engineering
+        \\
+        Thailand
+        \break
+        March 2023
+    \end{center}
+    \newpage
+    \vspace*{\fill}
+    \begin{flushleft}
+        Approved by Project Advisor:
+    \end{flushleft}
+    \begin{flushright}
+        Name: Dr. Amulya Bhattarai\rule{0.80cm}{0mm}   
+        \\~\\
+        Signature:\rule{3.95cm}{0mm} 
+        \\~\\
+        Date:\rule{4.7cm}{0.15mm}
+        \\~\\~\\~\\
+    \end{flushright}
+    \begin{flushleft}
+        Plagiarism verified by:
+    \end{flushleft}
+    \begin{flushright}
+        Name: Dr. Ehsan Ali\rule{2.18cm}{0mm}   
+        \\~\\
+        Signature:\rule{4.07cm}{0mm} 
+        \\~\\
+        Date:\rule{4.8cm}{0.15mm}
+        \\~\\~\\~\\
+    \end{flushright}
+    \newpage
+    \begin{flushleft}
+        \begin{center}
+            \textbf{Abstract}
+        \end{center}
+        The number of disabled people has been dramatically increasing. Whether it is due to natural causes or accidents.
+        A control method of prosthetics arm based on electromyography sensor (EMG) is the right choice.
+        This sensor allows the user to measure electrical activity of muscle using their 
+        forearm to control the prosthetic hand to fulfill their needs such as pick up things.
+        Furthermore, by training an Artificial Intelligence model it will help controlling the arm easier for the user. As the AI should be able to
+        predict the state of the hand base on the incoming EMG signals.
+        This prosthetics arm based on EMG sensor will surely improve the life of disabled people.
+    \end{flushleft}
+    \newpage
+    \clearpage
+    \tableofcontents
+    \break
+    \pagenumbering{arabic}
+    \section{Introduction}
+    \begin{flushleft}
+    Around 15\% of the world’s population experience some form of disability, and one of them is being handless either through congenital disability or amputation living without hand is difficult. 
+    This project is developed using prosthetic arm with electromyography sensor (EMG). 
+    The EMG sensor is easy to apply. It might offers minimal discomfort but in exchange the disabled person quality of life will be improve,
+    allowing them to engage in many of the same activities they participate in before the loss of their hand.
+    \end{flushleft}
+    \subsection{Project Objectives}
+    \begin{itemize}
+        \item For user to be able to control a robotic arm with an EMG Sensors.
+        \item For amputees to be able to use the arm like using a normal arm.
+        \item Training an AI to be able to predict the arm movement from incoming signal pattern from EMG Sensor.
+    \end{itemize}
+    \break
+    \section{Project Overview}
+    \subsection{Overall System Diagram}
+        \begin{figure}[!h]
+            \centering
+            \includegraphics[width= 11cm, height=5cm]{emgWithArm.png}
+            \caption{Emg Sensor Connection with Microcontroller.}
+        \end{figure}
+        \begin{flushleft}
+            The diagram above shows the connection of the EMG sensor with the microcontroller, the microcontroller shown in the diagram is Arduino Uno R3. However, we will be using
+            the Raspberry Pi Pico for this for this project instead. The EMG Sensor will output will be received using the analog input of the microcontroller. After this we would connect the
+            microcontroller to control the motors of the arm to allow for movement base on the processed output. After that the values is passed on to an AI algorithm to be processed. Then the
+            output of the algorithm is used to determine the action the Robotic Arm will make.
+        \end{flushleft}
+    \subsection{Hardware}
+    \subsubsection{Microcontroller}
+    \begin{flushleft}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width = 5cm, height = 5cm]{pico.jpg}
+            \caption{Raspberry Pi Pico.}
+        \end{figure}
+        The Raspberry Pi Pico is a tiny, versatile and flexible microcontroller board based on the Raspberry Pi RP2040 
+        microcontroller chip. It features Dual-core ARM Cortex-M0+ cores run up to 133MHz; 256KB RAM;26 multifunction GPIO pins;
+        and a broad range of interfacing options. This is paired with 2MB of onboard QSPI Flash memory for code and data storage.\cite{pico}
+        \hspace*{2em} We decided to use this microcontroller because of the size and the ARM Cortex processor it uses allows us to be able to
+        use TensorFlow Lite with it.
+    \end{flushleft}
+    \subsubsection{EMG Sensors}
+    \begin{flushleft}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width= 5cm,height= 5cm]{emg.jpg}
+            \caption{EMG Sensor.}
+        \end{figure}
+        The EMG sensor is one of the most important components of the project.
+        It is used to measure the muscle the activity in the arm. So that we can use the
+        output of the EMG sensor along with an AI algorithm to be able to control the arm movements.
+    \end{flushleft}
+    \subsubsection{Flex Sensors}
+    \begin{flushleft}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width= 5cm,height= 5cm]{flex.jpg}
+            \caption{Flex Sensors.}
+        \end{figure}
+        A flex sensor is a ultra-thin high-sensitivity sensor that detect the amount of deflection or bending in one direction. 
+        When the sensor is flexed or bended across the sensing area,the resistance of the sensor increases causes the output voltage change, the greater the pressure,
+        \\
+        the greater the output voltage.
+        \end{flushleft}
+            \subsubsection{Servo Motors}
+    \begin{flushleft}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width= 7cm,height= 5cm]{servo.jpg}
+            \caption{Servo.}
+        \end{figure}
+        The servo motor is a rotational actuator, that can be control with high precision and efficiency.
+        The servo motor will be used in controlling the movements of the arm. The servo motor will be contolled according to the prediction
+        of the AI algorithm. Which will determine how each servo motor will move to perform an action according to the hand gesture of the user.
+    \end{flushleft}
+    \subsubsection{Power Supply}
+    \begin{flushleft}
+        \begin{flushleft}
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width= 5cm, height = 5cm]{li-ion.jpg}
+                \caption{Li-Ion Battery.}
+            \end{figure}
+            \textbf{Li-Ion Battery}
+            \\
+            Lithium-Ion (Li-ION) Battery which Lithium ion moves from negative to positive electrolyte,
+            from an anode to the cathode during discharge and reverse when charging. 
+            \\
+            \hspace*{2em}Lithium-Ion Battery also has many advantages over other rechargeable battery. Lithium-Ion Battery
+            has a high energy density compare to other battery technology. They are also capable of delivering 3.6 Volts, which
+            is 3 times higher than other batteries. Which allow them to applications which require high-power. They also have a maintenance
+            in order to preserve its battery life
+            \cite{batteries_comp}
+            \cite{robu_batteries}.
+        \end{flushleft}
+        \begin{table}[!htbp]
+        \centering
+        \caption{Li-Po VS Li-Ion battery.}
+            \begin{tabular}{c c c}
+                \hline
+                 & \textbf{Li-Po} & \textbf{Li-Ion} \\
+                \hline
+                Name          & Lithium-Polymer    & Lithium-Ion\\
+                Voltage Range & 3V to 4.2V         & 3v to 4.2V\\
+                Flexibly      & High               & Low\\
+                Costs         & Slightly Expensive & Low\\
+                Capacity      & 2 times higher if at same volume   & Relatively Lower\\
+                \hline
+            \end{tabular}
+            \FloatBarrier
+        \end{table}
+    \end{flushleft}
+    \FloatBarrier
+    \subsubsection{Robot Arm}
+    \begin{flushleft}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width= 5cm, height = 5cm]{RobotArm.png}
+            \caption{Robot Arm.}
+        \end{figure}
+        This is the design of our Robot Arm we bought. The Robot Arm used up to 6 servo motors to control each finger and each finger can be move seperately
+        when the servo motor pulled the ziptie.
+    \end{flushleft}
+    \subsection{Software}
+    \subsubsection{Arduino IDE}
+    \begin{flushleft}
+    Arduino IDE is an Integrated Development Environment that is use for uploading programs 
+    and communication to Arduino Boards or other supported microcontrollers and microprocessors
+    \cite{arduino}.
+    \\
+    For this project we plan on using the Arduino IDE's serial plotter to visualize the output pattern
+    from the EMG Sensor. Before using TensorFlow to train the data.
+    \end{flushleft}
+    \subsubsection{Visual Studio Code}
+    \begin{flushleft}
+    Visual Studio Code is code editor that can do debugging, task running, and version control.
+    Visual Studio Code also allows you to add extensions to help you with your coding experience.
+    \\
+    \hspace*{2em}We plan on using Visual Studio Code to do the programming for the project, with Pico SDK and the
+    TensorFlow lite API for C++.
+    \end{flushleft}
+    \subsubsection{Pico SDK}
+    \begin{flushleft}
+    The Pico SDK or Raspberry Pi Pico SDK allows developers to write programs to the Raspberry Pi Pico
+    using C, C++, or Assembly Language. By providing headers, libraries, and build system necessary for it.
+    We plan on using the Pico SDK in this project because the official TensorFlow lite library does not
+    support the Raspberry Pi Pico board in Arduino. Hence, we have to use C++ in order to use TensorFlow lite with it
+    \cite{raspberrypi}.
+    \end{flushleft}
+    \subsubsection{Tensorflow Lite (TinyML)}
+    \begin{flushleft}
+        TensorFlow Lite also called TinyML is a AI Framework designed for \\
+        microcontrollers or devices with minimal memory. It is written in C++ \\
+        and requires a 32-bit platform.\\
+        \hspace*{2em}With TensorFlow Lite we can use it to train the input from the EMG Sensors\\
+        and predict the action of the arm making the control of the robotic arm easier.
+    \end{flushleft}
+    \section{Activities and Progress}
+    \subsection{Issues and Challenges}
+    \subsubsection{TensorFlow Compatibility Issues}
+    \begin{flushleft}
+    The Raspberry Pi Pico the necessary specs to run the TensorFlow Lite. However, there is no official library for running TensorFlow Lite. The model can be train using TensorFlow in PC 
+    and convert to TensorFlow Lite for the microcontrollers later \cite{tensorflow}.
+    \end{flushleft}
+    \subsubsection{Costs of 3D Printing}
+    \begin{flushleft}
+        Currently we are planning on 3D printing the Robotic Arm, however we haven't design it or haven't found any model we can use to estimate the cost yet so we aren't sure of
+        the price. From questing our friends using PCBway website, it can get a bit pricy if there are lots of part and uses strong material.
+    \end{flushleft}
+    \subsection{Activity and Progress}
+    \subsubsection{Flowchart}
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width=10cm, height=13cm]{FlowChartV2.png}
+        \caption{Flowchart.}
+    \end{figure}
+    \break
+    \subsubsection{Sensor Values}
+    \begin{flushleft}
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[width=13cm,height=10cm]{sensorimg2.png}
+            \caption{Output of EMG Sensor.}
+        \end{figure}
+        As shown in the Fig.7, We were able to connect the emg 
+        with the oscilloscope and use the power supply in the lab to provide 5 positive and negative voltage to power the EMG sensor.
+        The sensor is uses three electrodes pad that is stick to the arm in order to get a single input. When the hand is closed the 
+        signal increases and when the hand is opened/relaxed the signal becomes still almost flat\dots
+    \end{flushleft}
+    \break
+    \subsubsection{Smoothing the Signals}
+    \begin{flushleft}
+        \begin{figure}[!htbp]
+            \centering
+            \includegraphics[width=13cm, height=5cm]{V2.jpg}
+            \caption{Sensor Values from Aruino Serial Plotter.}
+        \end{figure}
+        As we can see in Fig. 8 the output given by the sensor is not really smooth, and could be hard to
+        work with. So in order to fix it we will be applying a filter to help smoothen the curve and make it easier
+        to work with. We have decided to use the second order low pass filter in order to smoothen the curve. The filter was 
+        able to smoothen the curve when compared to the original unfiltered signal. However, the filter introduced a slight delay.
+        \cite{lowppassfilter}
+        \cite{filterEmg}.
+    \end{flushleft}
+    \subsubsection{AI Training}
+    \paragraph{Data Preperation}
+        \begin{flushleft}
+            For the data preperation we will be using MATLAB to visualize what the data for open and close is.
+            We will be dividing the recorded data into training data and testing data. 80\% of the recorded data will be 
+            used for training data and 20\% of it will be used for testing data.
+            The recorded data will be from 30-40 people, each person will each open an close their hand for 1 minute.
+            Here are the histogram of the recorded data for open and close hand.
+                \begin{figure}[!htbp]
+                    \includegraphics[width=13cm, height=5cm]{histo_close.png}
+                \end{figure}
+        \end{flushleft}
+    \section{Conclusion}
+    \begin{flushleft}
+    The smart robot arm project based on the EMG sensor is a project that can help improve the lives of disabled person or amputees. As it allows them
+    to be able to control their arm or missing parts again. This can also be implemented to other projects such as a remote surgery robot that require precise hand movement,
+    or in industrial environment when testing chemicals with out going near it. Currently the project is at its early stages and minor changes may occur in the future
+    
+    \end{flushleft}
+    \break
+    \bibliographystyle{plain}
+    
+    \bibliography{ref}
+\end{document}
+

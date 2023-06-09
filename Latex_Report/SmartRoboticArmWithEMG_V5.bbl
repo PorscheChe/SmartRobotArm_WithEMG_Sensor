@@ -1,0 +1,47 @@
+\begin{thebibliography}{1}
+
+\bibitem{arduino}
+Arduino.cc.
+\newblock Arduino integrated development environment (ide) v1.
+\newblock
+  \url{https://docs.arduino.cc/software/ide-v1/tutorials/arduino-ide-v1-basics},
+  Accessed Dec 10, 2022.
+
+\bibitem{lowppassfilter}
+curiores.
+\newblock Lowpass2.0.
+\newblock
+  \url{https://github.com/curiores/ArduinoTutorials/tree/main/BasicFilters/ArduinoImplementations/LowPass/LowPass2.0},
+  Accessed Dec 27,2022.
+
+\bibitem{batteries_comp}
+Jia~Xueyan Huai~Chuanfeng, Liu~Pingan.
+\newblock Measurement and analysis for lithium battery of high-rate discharge
+  performance, 2011.
+
+\bibitem{raspberrypi}
+kilograham.
+\newblock Raspberrypi/pico-sdk.
+\newblock \url{https://github.com/raspberrypi/pico-sdk}, 2022.
+
+\bibitem{pico}
+Raspberrypi.
+\newblock Raspberry pi documentation, Accessed 3 Jan, 2023.
+
+\bibitem{robu_batteries}
+robu.in.
+\newblock Lithium-ion battery vs lithium-polymer battery.
+\newblock \url{https://robu.in/lithium-ion-battery-vs-li-po-battery/}, Accessed
+  Jan 4,2023.
+
+\bibitem{tensorflow}
+TensorFlow.
+\newblock Tensorflow lite for microcontrollers.
+\newblock \url{https://www.tensorflow.org/lite/microcontrollers}, Accessed Dec
+  10,2022.
+
+\bibitem{filterEmg}
+Volker Zschorlic.
+\newblock Digital filtering of emg-signals, Apirl 1989.
+
+\end{thebibliography}
